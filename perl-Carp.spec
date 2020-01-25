@@ -3,7 +3,6 @@
 %bcond_without	tests		# do not perform "make test"
 #
 %define		pdir	Carp
-%include	/usr/lib/rpm/macros.perl
 Summary:	Carp - alternative warn and die for modules
 Summary(pl.UTF-8):	Carp - alternatywne warn i die dla modułów
 Name:		perl-Carp
