@@ -1,24 +1,26 @@
 #
 # Conditional build:
-%bcond_without	tests		# do not perform "make test"
+%bcond_without	tests	# unit tests
 #
 %define		pdir	Carp
 Summary:	Carp - alternative warn and die for modules
 Summary(pl.UTF-8):	Carp - alternatywne warn i die dla modułów
 Name:		perl-Carp
-Version:	1.25
+Version:	1.50
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Carp/%{pdir}-%{version}.tar.gz
-# Source0-md5:	83f2c9fb5075552450ae8766a2280660
-URL:		http://search.cpan.org/dist/Carp/
+Source0:	https://www.cpan.org/modules/by-module/Carp/%{pdir}-%{version}.tar.gz
+# Source0-md5:	95ad382253475fa9f7a4c04c8946136e
+URL:		https://metacpan.org/dist/Carp
+BuildRequires:	perl-ExtUtils-MakeMaker
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
 %if %{with tests}
 BuildRequires:	perl(IPC::Open3) >= 1.01_03
-BuildRequires:	perl-Test-Simple
+BuildRequires:	perl-Test-Simple >= 0.47
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
